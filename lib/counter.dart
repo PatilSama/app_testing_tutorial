@@ -10,4 +10,7 @@ class Counter{
   void decrementCounter(){
     _counter--;
   }
+  void reset(){
+    _counter = 0;
+  }
 }
