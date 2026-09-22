@@ -3,8 +3,10 @@ import 'package:http/http.dart' as http;
 import 'model/user.dart';
 
 class UserRepository {
+  final http.Client client;
+  UserRepository(this.client);
   Future<User> getUser() async {
-    final response = await http.get(
+    final response = await client.get(
       Uri.parse('https://jsonplaceholder.typicode.com/users/1'),
     );
 
@@ -14,6 +16,6 @@ class UserRepository {
       return User.fromJson(json);
     }
 
-    throw Exception('Something went wrong');
+    throw Exception('Some error occurred.');
   }
 }
