@@ -23,14 +23,16 @@ void main() {
           ),
         ).thenAnswer((invocation) async {
           return Response(
-            '''{"id":1,"name":"samadhan","username":"Bret","email":"sama111patil@gmail.com","webside":"hildegard.org"}''',
-            200,
+            '''{"id":1,"name":"samadhan","username":"patil","email":"sama111patil@gmail.com","webside":"hildegard.org"}''',
+            200
           );
         });
         // Act
         final user = await userRepository.getUser();
         // Assert
         expect(user, isA<User>());
+        expect(user.name, 'samadhan');
+        print("User Name = ${user.name}");
       });
 
       test('get Exception', ()async {
