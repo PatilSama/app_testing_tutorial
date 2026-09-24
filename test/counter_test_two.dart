@@ -1,10 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttertestproject/main.dart';
+import 'package:fluttertestproject/counter_two.dart';
+
 
 void main() {
-  late Main main;
+  late CounterTwo main;
   setUp(() {
-    main = Main();
+    main = CounterTwo();
   });
 
   group('2 case run in group', () {

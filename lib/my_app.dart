@@ -49,11 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() async {
-            counter.counterIncrement();
-            final user = await UserRepository(Client()).getUser();
-            print("User Name ${user.name}");
+        onPressed: ()async {
+          // final user = await UserRepository(Client()).getUser();
+          // print("User Name ${user.name}");
+          counter.counterIncrement();
+          setState((){
           });
         },
         tooltip: 'Increment',
