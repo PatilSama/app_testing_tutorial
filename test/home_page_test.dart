@@ -15,7 +15,7 @@ void main() {
       final ctr2 = find.text('1');
       expect(ctr2, findsNothing);
 
-      final incrementButton = find.byType(FloatingActionButton);
+      final incrementButton = find.byKey(const Key('increment_counter'));
       await tester.tap(incrementButton);
 
       await tester.pump();
@@ -23,6 +23,7 @@ void main() {
       expect(ctr3, findsOneWidget);
       final ctr4 = find.text('0');
       expect(ctr4, findsNothing);
+      expect(find.byType(AppBar), findsOneWidget);
     },
   );
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertestproject/user_list_widget.dart';
 import 'package:fluttertestproject/user_repository.dart';
 import 'package:http/http.dart';
 
 import 'counter.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: UserListWidget(futureUsers: UserRepository(Client()).getUser()),
     );
   }
 }
@@ -45,16 +47,21 @@ class _MyHomePageState extends State<MyHomePage> {
               '${counter.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            FloatingActionButton(
+              onPressed: () {},
+              tooltip: 'increment',
+              child: const Icon(Icons.add),
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: ()async {
+        key: const Key('increment_counter'),
+        onPressed: () async {
           // final user = await UserRepository(Client()).getUser();
           // print("User Name ${user.name}");
           counter.counterIncrement();
-          setState((){
-          });
+          setState(() {});
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
