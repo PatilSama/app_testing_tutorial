@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertestproject/gpt_test/gpt_test.dart';
 import 'package:fluttertestproject/user_list_widget.dart';
 import 'package:fluttertestproject/user_repository.dart';
 import 'package:http/http.dart';
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: UserListWidget(futureUsers: UserRepository(Client()).getUser()),
+      home: GptTest(),
+      // home: UserListWidget(futureUsers: UserRepository(Client()).getUser()),
     );
   }
 }
