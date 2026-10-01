@@ -24,7 +24,7 @@ class _TextFieldAndButtonState extends State<TextFieldAndButton> {
             key: Key('emailField'),
             keyboardType: TextInputType.emailAddress,
           ),
-          Text(emailText),
+          Text(emailText,key: const Key('emailtxt'),),
         ],
       ),
       floatingActionButton: FloatingActionButton(
