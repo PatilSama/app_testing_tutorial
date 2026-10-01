@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertestproject/user_repository.dart';
+import 'package:fluttertestproject/some_screen/user_repository.dart';
 import 'package:http/http.dart';
 
-import 'model/user.dart';
+import '../model/user.dart';
 
 class UserListWidget extends StatefulWidget {
   final Future<List<User>> futureUsers;

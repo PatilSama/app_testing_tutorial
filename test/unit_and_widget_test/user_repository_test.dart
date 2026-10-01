@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttertestproject/model/user.dart';
-import 'package:fluttertestproject/user_repository.dart';
+import 'package:fluttertestproject/some_screen/user_repository.dart';
 import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
 

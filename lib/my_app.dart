@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertestproject/gpt_test/checkbox_test.dart';
-import 'package:fluttertestproject/gpt_test/gpt_test.dart';
-import 'package:fluttertestproject/user_list_widget.dart';
-import 'package:fluttertestproject/user_repository.dart';
-import 'package:http/http.dart';
+import 'integration_app_test/button_click.dart';
+import 'integration_app_test/text_field_and_button.dart';
+import 'some_screen/counter.dart';
 
-import 'counter.dart';
-import 'gpt_test/container_test.dart';
-import 'gpt_test/listview_test.dart';
-import 'gpt_test/switch_test.dart';
 import 'gpt_test/visibility_test.dart';
 
 class MyApp extends StatelessWidget {
@@ -20,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: VisibilityTest(),
+      home: TextFieldAndButton(),
       // home: UserListWidget(futureUsers: UserRepository(Client()).getUser()),
     );
   }

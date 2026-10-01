@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'model/user.dart';
+import '../model/user.dart';
 
 class UserRepository {
   final http.Client client;

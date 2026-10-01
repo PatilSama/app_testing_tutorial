@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttertestproject/counter.dart';
+import 'package:fluttertestproject/some_screen/counter.dart';
+
 
 void main() {
   late Counter counter;

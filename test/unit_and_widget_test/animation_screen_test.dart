@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttertestproject/animation_screen.dart';
+import 'package:fluttertestproject/some_screen/animation_screen.dart';
 
 void main() {
   testWidgets('Animation Screen Test', (tester) async {

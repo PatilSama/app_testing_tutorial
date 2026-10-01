@@ -1,7 +1,7 @@
 
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttertestproject/email_check.dart';
+import 'package:fluttertestproject/some_screen/email_check.dart';
 
 void main(){
 

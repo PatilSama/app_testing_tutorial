@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttertestproject/model/user.dart';
-import 'package:fluttertestproject/user_list_widget.dart';
+import 'package:fluttertestproject/some_screen/user_list_widget.dart';
 
 void main() {
   testWidgets(

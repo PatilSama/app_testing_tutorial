@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttertestproject/counter_two.dart';
+
+import 'package:fluttertestproject/some_screen/counter_two.dart';
 
 
 void main() {
