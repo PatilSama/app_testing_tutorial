@@ -1,0 +1,39 @@
+name: Flutter - Android Build Dev
+
+on:
+  push:
+    branches:
+      - main
+      - origin
+      - myName
+  pull_request:
+    branches:
+      - main
+      - origin
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup JDK
+        uses: actions/setup-java@v6
+        with:
+          java-version: '25'
+          distribution: temurin
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          flutter-version: 3.44.8
+
+      - name: Clean dependencies
+        run: flutter clean
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
