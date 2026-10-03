@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'integration_app_test/button_click.dart';
+import 'integration_app_test/one_page.dart';
 import 'integration_app_test/text_field_and_button.dart';
 import 'some_screen/counter.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: TextFieldAndButton(),
+      home: OnePage(),
       // home: UserListWidget(futureUsers: UserRepository(Client()).getUser()),
     );
   }
