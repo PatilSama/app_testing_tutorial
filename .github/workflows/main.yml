@@ -33,8 +33,10 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: integration test
-        run: flutter test integration_test/navigation_test.dart -d PNZHUCPF4P65OZBA
+#      - name: integration test
+#        run: flutter test integration_test/navigation_test.dart -d PNZHUCPF4P65OZBA
+      - name: Widget test
+        run: flutter test test/unit_and_widget_test/animation_screen_test.dart
 
       - name: Build APK
 #        run: flutter build apk --release --build-name=1.0.0 --build-number=1
