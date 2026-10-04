@@ -19,6 +19,7 @@ class _CheckboxTestState extends State<CheckboxTest> {
           onChanged: (value) {
             setState(() {
               checked = value!;
+              final val = value;
             });
           },
         ),
