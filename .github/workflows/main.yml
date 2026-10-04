@@ -42,3 +42,8 @@ jobs:
 #        run: flutter build apk --release --build-name=1.0.0 --build-number=1
         run: flutter build apk --debug --build-name=1.0.0 --build-number=1
 
+      - name: Upload APK
+        uses: actions/upload-artifact@v6
+        with:
+          name: app-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
