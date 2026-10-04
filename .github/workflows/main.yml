@@ -34,7 +34,7 @@ jobs:
         run: flutter pub get
 
       - name: integration test
-        run: flutter test integration_test/navigation_test.dart -d android
+        run: flutter test integration_test/navigation_test.dart -d PNZHUCPF4P65OZBA
 
       - name: Build APK
 #        run: flutter build apk --release --build-name=1.0.0 --build-number=1
