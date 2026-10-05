@@ -38,6 +38,7 @@ jobs:
           cd ..
 
       - name: widget test
+        run: flutter test test/unit_and_widget_test/animation_screen_test.dart
 
       - name: Build iOS
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
