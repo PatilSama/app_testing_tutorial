@@ -1,0 +1,34 @@
+name: Flutter - iOS Build development
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: running platform
+    runs-on: macon-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup BASE URL File
+        run: echo "${{ secretes.BASE_URL_FILE }}" | base64 --decode > lib/core/data/remote/base_url.dart
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.41.7
+      - run: flutter --version
+
+      - name: Clear Dependencies
+        uses: flutter clean
+
+      - name: Install Dependencies
+        uses: flutter pub get
+
+      
