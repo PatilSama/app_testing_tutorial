@@ -33,7 +33,7 @@ jobs:
 
       - name: Install iOS Dependencies
         run: |
-          cd iso
+          cd ios
           pod install --repo-update
           cd ..
 
