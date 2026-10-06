@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluttertestproject/some_screen/counter_two.dart';
 
-
 void main() {
   late CounterTwo main;
   setUp(() {

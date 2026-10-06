@@ -19,7 +19,7 @@ class _ContainerTestState extends State<ContainerTest> {
           decoration: BoxDecoration(
             color: Colors.grey,
             borderRadius: BorderRadius.circular(10),
-            border: BoxBorder.all(color: Colors.red,width: 5),
+            border: BoxBorder.all(color: Colors.red, width: 5),
           ),
         ),
       ),

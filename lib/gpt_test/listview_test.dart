@@ -14,7 +14,11 @@ class _ListviewTestState extends State<ListviewTest> {
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return ListTile(key:Key('key$index'),title: Text('Item $index'),onTap: (){},);
+          return ListTile(
+            key: Key('key$index'),
+            title: Text('Item $index'),
+            onTap: () {},
+          );
         },
       ),
     );

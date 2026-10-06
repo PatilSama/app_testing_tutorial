@@ -12,12 +12,17 @@ class _VisibilityTestState extends State<VisibilityTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Visibility(visible: visib,child: Text('samadhan')),),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        setState(() {
-          visib = !visib;
-        });
-      },key: const Key('visibility'),),
+      body: Center(
+        child: Visibility(visible: visib, child: Text('samadhan')),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            visib = !visib;
+          });
+        },
+        key: const Key('visibility'),
+      ),
     );
   }
 }

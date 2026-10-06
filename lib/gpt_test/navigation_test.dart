@@ -16,7 +16,7 @@ class NavigationTest extends StatelessWidget {
               MaterialPageRoute(builder: (_) => SwitchTest()),
             );
           },
-          child:const Text('Go Home'),
+          child: const Text('Go Home'),
         ),
       ),
     );

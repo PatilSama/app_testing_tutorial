@@ -1,11 +1,8 @@
-
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttertestproject/some_screen/email_check.dart';
 
-void main(){
-
-  test("check email id", (){
+void main() {
+  test("check email id", () {
     // Arrange
     final email = EmailCheck();
     // Act
@@ -14,7 +11,7 @@ void main(){
     expect(value, true);
   });
 
-  test('check invalid email id', (){
+  test('check invalid email id', () {
     // Arrange
     final email = EmailCheck();
     // Act

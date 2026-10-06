@@ -6,11 +6,19 @@ class DialogTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: ElevatedButton(onPressed: (){
-        showDialog(context: context, builder: (_){
-          return AlertDialog(title: Text('Hello'),);
-        });
-      }, child: Text('Dialog Show')),),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (_) {
+                return AlertDialog(title: Text('Hello'));
+              },
+            );
+          },
+          child: Text('Dialog Show'),
+        ),
+      ),
     );
   }
 }

@@ -19,8 +19,8 @@ class _TextFieldTestState extends State<TextFieldTest> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextField(key: const Key('emailField'), controller: txtMessage),
-          SizedBox(height: 10,),
-          Text(message,key: const Key('displayedEmail'),)
+          SizedBox(height: 10),
+          Text(message, key: const Key('displayedEmail')),
         ],
       ),
       floatingActionButton: FloatingActionButton(

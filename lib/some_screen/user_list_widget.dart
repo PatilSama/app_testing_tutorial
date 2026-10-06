@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertestproject/some_screen/user_repository.dart';
-import 'package:http/http.dart';
-
 import '../model/user.dart';
 
 class UserListWidget extends StatefulWidget {
   final Future<List<User>> futureUsers;
-  const UserListWidget({super.key,required this.futureUsers});
+  const UserListWidget({super.key, required this.futureUsers});
 
   @override
   State<UserListWidget> createState() => _UserListWidgetState();
 }
 
 class _UserListWidgetState extends State<UserListWidget> {
-
   // final UserRepository userRepository = UserRepository(Client());
   // late Future<List<User>> futureUsers;
   // @override

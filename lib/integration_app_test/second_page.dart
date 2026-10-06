@@ -5,6 +5,10 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Navigate Success.',key: const Key('secondPage'),)));
+    return Scaffold(
+      body: Center(
+        child: Text('Navigate Success.', key: const Key('secondPage')),
+      ),
+    );
   }
 }

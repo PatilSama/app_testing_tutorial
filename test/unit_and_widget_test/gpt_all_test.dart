@@ -14,6 +14,5 @@ void main() {
     await tester.pump();
     final test2 = find.text('Mayuri');
     expect(test2, findsOneWidget);
-
   });
 }

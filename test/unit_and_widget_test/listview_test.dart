@@ -10,7 +10,6 @@ void main() {
       await tester.tap(find.byKey(Key('key$i')));
 
       expect(find.text('Item $i'), findsOneWidget);
-
     }
   });
 }

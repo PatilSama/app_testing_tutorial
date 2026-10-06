@@ -24,7 +24,7 @@ void main() {
         ).thenAnswer((invocation) async {
           return Response(
             '''{"id":1,"name":"samadhan","username":"patil","email":"sama111patil@gmail.com","webside":"hildegard.org"}''',
-            200
+            200,
           );
         });
         // Act
@@ -35,7 +35,7 @@ void main() {
         // print("User Name = ${user.name}");
       });
 
-      test('get Exception', ()async {
+      test('get Exception', () async {
         when(
           () => mockHTTPClient.get(
             Uri.parse('https://jsonplaceholder.typicode.com/users/1'),

@@ -1,16 +1,16 @@
-class Counter{
-
+class Counter {
   int _counter = 0;
   int get count => _counter;
 
-  void counterIncrement(){
+  void counterIncrement() {
     _counter++;
   }
 
-  void decrementCounter(){
+  void decrementCounter() {
     _counter--;
   }
-  void reset(){
+
+  void reset() {
     _counter = 0;
   }
 }

@@ -36,6 +36,17 @@ jobs:
           cd ios
           pod install --repo-update
           cd ..
+      - name: Auto format the dart code
+        run: dart format .
+
+      - name: Verify the dart code formatted
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze the dart code
+        run: flutter analyze --fatal-warnings
+
+      - name: Run tests
+        run: flutter test
 
       - name: widget test
         run: flutter test test/unit_and_widget_test/animation_screen_test.dart

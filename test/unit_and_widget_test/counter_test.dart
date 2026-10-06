@@ -1,11 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttertestproject/some_screen/counter.dart';
 
-
 void main() {
   late Counter counter;
-  setUp((){counter = Counter();
-  print("SetUpAll Execute only one");});
+  setUp(() {
+    counter = Counter();
+    print("SetUpAll Execute only one");
+  });
   group("Counter Class -", () {
     // arrange
 
@@ -31,14 +32,14 @@ void main() {
       },
     );
 
-    test('decrement counter -', (){
+    test('decrement counter -', () {
       counter.decrementCounter();
       final val = counter.count;
       expect(val, -1);
       print('decrement');
     });
 
-    test('Counter class reset -', (){
+    test('Counter class reset -', () {
       counter.reset();
       expect(counter.count, 0);
       print('reset 0');
