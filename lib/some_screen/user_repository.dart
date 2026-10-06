@@ -13,7 +13,7 @@ class UserRepository {
     );
 
     if (response.statusCode == 200) {
-      final List<Map<String, dynamic>> json = jsonDecode(response.body);
+      final List<dynamic> json = jsonDecode(response.body);
 
       return json.map((json) => User.fromJson(json)).toList();
     }

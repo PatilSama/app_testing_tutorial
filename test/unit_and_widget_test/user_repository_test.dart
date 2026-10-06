@@ -9,44 +9,57 @@ class MockHTTPClient extends Mock implements Client {}
 void main() {
   late UserRepository userRepository;
   late MockHTTPClient mockHTTPClient;
+
   setUp(() {
     mockHTTPClient = MockHTTPClient();
     userRepository = UserRepository(mockHTTPClient);
   });
+
   group('User Repository - ', () {
     group('Get User Function - ', () {
       test('get function status code 200', () async {
-        // Arrange.
+        // Arrange
         when(
           () => mockHTTPClient.get(
-            Uri.parse('https://jsonplaceholder.typicode.com/users/1'),
+            Uri.parse('https://jsonplaceholder.typicode.com/users'),
           ),
-        ).thenAnswer((invocation) async {
-          return Response(
-            '''{"id":1,"name":"samadhan","username":"patil","email":"sama111patil@gmail.com","webside":"hildegard.org"}''',
-            200,
-          );
+        ).thenAnswer((_) async {
+          return Response('''
+              [
+                {
+                  "id": 1,
+                  "name": "samadhan",
+                  "username": "patil",
+                  "email": "sama111patil@gmail.com",
+                  "website": "hildegard.org"
+                }
+              ]
+              ''', 200);
         });
+
         // Act
-        final user = await userRepository.getUser();
+        final users = await userRepository.getUser();
+
         // Assert
-        expect(user, isA<User>());
-        // expect(user.name, 'samadhan');
-        // print("User Name = ${user.name}");
+        expect(users, isA<List<User>>());
+        expect(users.length, 1);
+        expect(users.first.name, 'samadhan');
+        // expect(users.first.username, 'patil');
+        expect(users.first.email, 'sama111patil@gmail.com');
       });
 
       test('get Exception', () async {
+        // Arrange
         when(
           () => mockHTTPClient.get(
-            Uri.parse('https://jsonplaceholder.typicode.com/users/1'),
+            Uri.parse('https://jsonplaceholder.typicode.com/users'),
           ),
-        ).thenAnswer((invocation) async {
+        ).thenAnswer((_) async {
           return Response('{}', 500);
         });
-        // Act
-        final user = userRepository.getUser();
-        // assert
-        expect(user, throwsException);
+
+        // Act + Assert
+        expect(() => userRepository.getUser(), throwsException);
       });
     });
   });
