@@ -1,34 +1,37 @@
-name: Flutter - iOS Build development
+name: Flutter - Android And iOS Build Dev
+
 on:
   push:
     branches:
-      - master1
+      - master
   pull_request:
     branches:
-      - master1
+      - master
 
 jobs:
   build:
-    name: running platform
     runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
-#      - name: Setup BASE URL File
-#        run: echo "${{ secrets.BASE_URL_FILE }}" | base64 --decode > lib/core/data/remote/base_url.dart
+      - name: Java SDK
+        uses: actions/setup-java@v6
+        with:
+          java-version: '21'
+          distribution: temurin
+      - run: java --version
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
-          flutter-version: 3.41.7
-      - run: flutter --version
+          channel: 'stable'
+          flutter-version: 3.44.8
 
-      - name: Clear Dependencies
+      - name: Clean dependencies
         run: flutter clean
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: flutter pub get
 
       - name: Install iOS Dependencies
@@ -51,7 +54,8 @@ jobs:
       - name: widget test
         run: flutter test test/unit_and_widget_test/animation_screen_test.dart
 
+      - name: Build Android
+        run: fluter build apk --debug --build-name=1.0.0 --build-number=1
+
       - name: Build iOS
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
-
-      
