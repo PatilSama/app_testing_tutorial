@@ -61,7 +61,7 @@ jobs:
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
 
       - name: Upload Apk
-        uses: echapmanFromBunnings/upload-artifact@3.0
+        uses: actions/upload-artifact@v6
         with:
           name: android-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
