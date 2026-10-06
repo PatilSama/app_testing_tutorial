@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'integration_app_test/button_click.dart';
 import 'integration_app_test/one_page.dart';
-import 'integration_app_test/text_field_and_button.dart';
 import 'some_screen/counter.dart';
-
-import 'gpt_test/visibility_test.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

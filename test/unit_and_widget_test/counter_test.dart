@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttertestproject/some_screen/counter.dart';
 
@@ -5,7 +6,9 @@ void main() {
   late Counter counter;
   setUp(() {
     counter = Counter();
-    print("SetUpAll Execute only one");
+    if (kDebugMode) {
+      print("SetUpAll Execute only one");
+    }
   });
   group("Counter Class -", () {
     // arrange
@@ -15,7 +18,9 @@ void main() {
       () {
         final val = counter.count;
         expect(val, 0);
-        print('set 0');
+        if (kDebugMode) {
+          print('set 0');
+        }
       },
     );
 
@@ -28,7 +33,9 @@ void main() {
         final val = counter.count;
         // assert
         expect(val, 1);
-        print('set 1');
+        if (kDebugMode) {
+          print('set 1');
+        }
       },
     );
 
@@ -36,13 +43,17 @@ void main() {
       counter.decrementCounter();
       final val = counter.count;
       expect(val, -1);
-      print('decrement');
+      if (kDebugMode) {
+        print('decrement');
+      }
     });
 
     test('Counter class reset -', () {
       counter.reset();
       expect(counter.count, 0);
-      print('reset 0');
+      if (kDebugMode) {
+        print('reset 0');
+      }
     });
   });
 }
