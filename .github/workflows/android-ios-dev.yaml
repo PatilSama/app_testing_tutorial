@@ -55,7 +55,7 @@ jobs:
         run: flutter test test/unit_and_widget_test/animation_screen_test.dart
 
       - name: Build Android
-        run: fluter build apk --debug --build-name=1.0.0 --build-number=1
+        run: flutter build apk --debug --build-name=1.0.0 --build-number=1
 
       - name: Build iOS
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
