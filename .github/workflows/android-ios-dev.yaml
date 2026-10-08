@@ -57,9 +57,6 @@ jobs:
       - name: Build Android
         run: flutter build apk --debug --build-name=1.0.0 --build-number=1
 
-      - name: Build Android AAB
-        run: flutter build appbundle --release --build-name=1.0.0 --build-number=1
-
       - name: Build iOS
         run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
 
@@ -69,12 +66,6 @@ jobs:
           name: android-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
 
-      - name: Upload AAB
-        uses: actions/upload-artifact@v6
-        with:
-          name: android-release-aab
-          path: build/app/outputs/bundle/release/app-release.aab
-
       - name: upload artifact to firebase app distribution
         uses: burhankhanzada/firebase_app_distribution_github_action@main
         with:
@@ -82,11 +73,3 @@ jobs:
           service_account_key_json: ${{secrets.FIREBASE_APP_DISTRIBUTION_CREDENTIOAL_FILE_CONTENT}}
           groups: android-internal
           file: build/app/outputs/flutter-apk/app-debug.apk
-
-      - name: Upload AAB to Firebase App Distribution
-        uses: emertozd/Firebase-Distribution-Github-Action@v6
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID_DEV }}
-          serviceCredentialsFileContent: ${{ secrets.FIREBASE_APP_DISTRIBUTION_CREDENTIOAL_FILE_CONTENT }}
-          groups: android-internal
-          file: build/app/outputs/bundle/release/app-release.aab

@@ -47,3 +47,11 @@ jobs:
         with:
           name: app-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
+
+      - name: upload artifact to firebase app distribution
+        uses: emertozd/Firebase-Distribution-Github-Action@v6
+        with:
+          app_id: ${{secrets.FIREBASE_APP_ID_ANDROID_DEV}}
+          service_account_key_json: ${{secrets.FIREBASE_APP_DISTRIBUTION_CREDENTIOAL_FILE_CONTENT}}
+          groups: android-internal
+          file: build/app/outputs/flutter-apk/app-debug.apk
