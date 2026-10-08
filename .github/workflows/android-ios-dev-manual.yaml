@@ -1,4 +1,4 @@
-name: Flutter - Android And iOS Build Dev
+name: Flutter - Android And iOS Manual Build Dev
 
 on:
   workflow_dispatch:
