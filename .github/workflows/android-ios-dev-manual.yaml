@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          ref:${{github.event.inputs.branch}}
+#        with:
+#          ref:${{github.event.inputs.branch}}
 
       #      - name: Java SDK
 #        uses: actions/setup-java@v6
