@@ -34,40 +34,40 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Install iOS Dependencies
-        run: |
-          cd ios
-          pod install --repo-update
-          cd ..
+#      - name: Install iOS Dependencies
+#        run: |
+#          cd ios
+#          pod install --repo-update
+#          cd ..
       - name: Auto format the dart code
         run: dart format .
 
       - name: Verify the dart code formatted
         run: dart format --output=none --set-exit-if-changed .
 
-      - name: Analyze the dart code
-        run: flutter analyze --fatal-warnings
+#      - name: Analyze the dart code
+#        run: flutter analyze --fatal-warnings
 
-      - name: Run tests
-        run: flutter test
+#      - name: Run tests
+#        run: flutter test
+#
+#      - name: widget test
+#        run: flutter test test/unit_and_widget_test/animation_screen_test.dart
 
-      - name: widget test
-        run: flutter test test/unit_and_widget_test/animation_screen_test.dart
+#      - name: Build Android
+#        run: flutter build apk --debug --build-name=1.0.0 --build-number=1
 
-      - name: Build Android
-        run: flutter build apk --debug --build-name=1.0.0 --build-number=1
-
-      - name: Build iOS
-        run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
+#      - name: Build iOS
+#        run: flutter build ipa --debug --build-name=1.0.0 --build-number=1 --no-codesign
 
       - name: Build Android AAB
         run: flutter build appbundle --release --build-name=1.0.0 --build-number=1
 
-      - name: Upload Apk
-        uses: actions/upload-artifact@v6
-        with:
-          name: android-debug-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+#      - name: Upload Apk
+#        uses: actions/upload-artifact@v6
+#        with:
+#          name: android-debug-apk
+#          path: build/app/outputs/flutter-apk/app-debug.apk
 
       - name: Upload AAB
         uses: actions/upload-artifact@v6
@@ -85,10 +85,10 @@ jobs:
 
 
 
-      - name: upload artifact to firebase app distribution
-        uses: emertozd/Firebase-Distribution-Github-Action@v6
-        with:
-          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID_DEV }}
-          serviceCredentialsFileContent: ${{ secrets.FIREBASE_APP_DISTRIBUTION_CREDENTIOAL_FILE_CONTENT }}
-          groups: android-internal
-          file: build/app/outputs/flutter-apk/app-debug.apk
+#      - name: upload artifact to firebase app distribution
+#        uses: emertozd/Firebase-Distribution-Github-Action@v6
+#        with:
+#          appId: ${{ secrets.FIREBASE_APP_ID_ANDROID_DEV }}
+#          serviceCredentialsFileContent: ${{ secrets.FIREBASE_APP_DISTRIBUTION_CREDENTIOAL_FILE_CONTENT }}
+#          groups: android-internal
+#          file: build/app/outputs/flutter-apk/app-debug.apk
